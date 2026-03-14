@@ -1,0 +1,22 @@
+<idea-plugin>
+  <id>com.ruzibekov.mobile-api-inspector</id>
+  <name>Mobile API Inspector</name>
+  <vendor>Ruzibekov</vendor>
+
+  <depends>com.intellij.modules.platform</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <postStartupActivity implementation="com.ruzibekov.mobileapiinspector.service.ApiInspectorProjectActivity" />
+    <applicationConfigurable
+      id="mobileApiInspector.settings"
+      displayName="API Inspector"
+      parentId="tools"
+      instance="com.ruzibekov.mobileapiinspector.ui.ApiInspectorSettingsConfigurable" />
+    <toolWindow
+      id="API Inspector"
+      anchor="bottom"
+      icon="/icons/mobile-api-inspector.svg"
+      factoryClass="com.ruzibekov.mobileapiinspector.ui.ApiInspectorToolWindowFactory"
+      canCloseContents="false" />
+  </extensions>
+</idea-plugin>

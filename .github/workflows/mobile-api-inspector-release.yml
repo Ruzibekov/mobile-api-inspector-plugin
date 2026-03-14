@@ -1,0 +1,68 @@
+name: Mobile API Inspector Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: Publish channel
+        required: true
+        default: default
+      version:
+        description: Plugin version override
+        required: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mobile-api-inspector-release
+  cancel-in-progress: false
+
+jobs:
+  publish-plugin:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      IDEA_VERSION: 2025.3.3
+      PUBLISH_CHANNEL: ${{ github.event.inputs.channel }}
+      PUBLISH_TOKEN: ${{ secrets.JETBRAINS_MARKETPLACE_TOKEN }}
+      CERTIFICATE_CHAIN: ${{ secrets.JETBRAINS_PLUGIN_CERTIFICATE_CHAIN }}
+      PRIVATE_KEY: ${{ secrets.JETBRAINS_PLUGIN_PRIVATE_KEY }}
+      PRIVATE_KEY_PASSWORD: ${{ secrets.JETBRAINS_PLUGIN_PRIVATE_KEY_PASSWORD }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: gradle
+
+      - name: Override plugin version
+        if: ${{ github.event.inputs.version != '' }}
+        working-directory: .
+        shell: bash
+        run: |
+          ruby -e 'path="build.gradle.kts"; content=File.read(path); content.sub!(/version = ".*"/, %(version = "${ENV.fetch("PLUGIN_VERSION")}")); File.write(path, content)' 
+        env:
+          PLUGIN_VERSION: ${{ github.event.inputs.version }}
+
+      - name: Validate secrets
+        shell: bash
+        run: |
+          for key in PUBLISH_TOKEN CERTIFICATE_CHAIN PRIVATE_KEY PRIVATE_KEY_PASSWORD; do
+            if [ -z "${!key}" ]; then
+              echo "$key is missing" >&2
+              exit 1
+            fi
+          done
+
+      - name: Verify plugin
+        working-directory: .
+        run: ./gradlew test verifyPluginProjectConfiguration verifyPluginStructure buildPlugin
+
+      - name: Publish plugin
+        working-directory: .
+        run: ./gradlew signPlugin publishPlugin

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ruzibekov.mobileapiinspector.ui.ApiRecordFilterTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-03-14T12:32:24.347Z" hostname="Savkats-MacBook-Pro.local" time="0.002">
+  <properties/>
+  <testcase name="matches selected method only" classname="com.ruzibekov.mobileapiinspector.ui.ApiRecordFilterTest" time="0.001"/>
+  <testcase name="matches selected platform only" classname="com.ruzibekov.mobileapiinspector.ui.ApiRecordFilterTest" time="0.0"/>
+  <testcase name="matches selected source only" classname="com.ruzibekov.mobileapiinspector.ui.ApiRecordFilterTest" time="0.0"/>
+  <testcase name="matches status groups and errors" classname="com.ruzibekov.mobileapiinspector.ui.ApiRecordFilterTest" time="0.001"/>
+  <testcase name="matches query against request url and body" classname="com.ruzibekov.mobileapiinspector.ui.ApiRecordFilterTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

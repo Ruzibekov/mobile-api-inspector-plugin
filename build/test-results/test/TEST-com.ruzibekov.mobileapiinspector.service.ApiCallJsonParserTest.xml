@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ruzibekov.mobileapiinspector.service.ApiCallJsonParserTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2026-03-14T12:32:24.315Z" hostname="Savkats-MacBook-Pro.local" time="0.023">
+  <properties/>
+  <testcase name="parses full payload" classname="com.ruzibekov.mobileapiinspector.service.ApiCallJsonParserTest" time="0.023"/>
+  <testcase name="falls back to raw text when value is not json" classname="com.ruzibekov.mobileapiinspector.service.ApiCallJsonParserTest" time="0.0"/>
+  <testcase name="accepts null response and error fields" classname="com.ruzibekov.mobileapiinspector.service.ApiCallJsonParserTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
