@@ -43,12 +43,12 @@ intellijPlatform {
   buildSearchableOptions = false
 
   pluginConfiguration {
-    id = "com.ruzibekov.mobile-api-inspector"
-    name = "Mobile API Inspector"
+    id = "com.ruzibekov.api-inspector"
+    name = "API Inspector"
     version = project.version.toString()
     description = """
       <p>Inspect Android, iOS, and Web API traffic directly inside IntelliJ IDEA.</p>
-      <p>Mobile API Inspector adds a dedicated tool window for browsing captured requests, reviewing formatted JSON payloads, and copying raw payloads or cURL commands without leaving the IDE.</p>
+      <p>API Inspector adds a dedicated tool window for browsing captured requests, reviewing formatted JSON payloads, and copying raw payloads or cURL commands without leaving the IDE.</p>
       <ul>
         <li>Searchable request list with host and path visibility</li>
         <li>Formatted request and response details</li>

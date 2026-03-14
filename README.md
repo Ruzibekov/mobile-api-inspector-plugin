@@ -1,4 +1,4 @@
-# Mobile API Inspector Plugin
+# API Inspector Plugin
 
 IntelliJ IDEA uchun Android, iOS va Web request/response ko‘rish paneli.
 
@@ -40,7 +40,7 @@ IDEA_LOCAL_PATH="/Applications/IntelliJ IDEA.app" ./gradlew buildPlugin
 Plugin zip:
 
 ```bash
-build/distributions/mobile-api-inspector-plugin-0.1.0.zip
+build/distributions/api-inspector-plugin-0.1.0.zip
 ```
 
 Marketplace-ready publish:
@@ -65,4 +65,4 @@ Kerakli secret nomlari:
 
 GitHub workflow:
 
-- `.github/workflows/mobile-api-inspector-release.yml`
+- `.github/workflows/api-inspector-release.yml`

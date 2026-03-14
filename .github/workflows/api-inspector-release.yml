@@ -1,4 +1,4 @@
-name: Mobile API Inspector Release
+name: API Inspector Release
 
 on:
   workflow_dispatch:
@@ -15,7 +15,7 @@ permissions:
   contents: read
 
 concurrency:
-  group: mobile-api-inspector-release
+  group: api-inspector-release
   cancel-in-progress: false
 
 jobs:

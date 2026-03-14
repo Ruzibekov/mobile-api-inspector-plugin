@@ -1,6 +1,6 @@
 <idea-plugin>
-  <id>com.ruzibekov.mobile-api-inspector</id>
-  <name>Mobile API Inspector</name>
+  <id>com.ruzibekov.api-inspector</id>
+  <name>API Inspector</name>
   <vendor>Ruzibekov</vendor>
 
   <depends>com.intellij.modules.platform</depends>
@@ -15,7 +15,7 @@
     <toolWindow
       id="API Inspector"
       anchor="bottom"
-      icon="/icons/mobile-api-inspector.svg"
+      icon="/icons/api-inspector.svg"
       factoryClass="com.ruzibekov.mobileapiinspector.ui.ApiInspectorToolWindowFactory"
       canCloseContents="false" />
   </extensions>

@@ -1,1 +1,1 @@
-rootProject.name = "mobile-api-inspector-plugin"
+rootProject.name = "api-inspector-plugin"
